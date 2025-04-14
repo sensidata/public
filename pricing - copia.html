@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Sitio SPA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .hidden-section {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-green-500 text-white">
+
+  <!-- Navegación -->
+  <nav class="bg-green-700 p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Mi Sitio</h1>
+      <ul class="flex space-x-6 text-lg">
+        <li><button onclick="mostrarSeccion('home')" class="hover:underline">Home</button></li>
+        <li><button onclick="mostrarSeccion('sobre')" class="hover:underline">Sobre nosotros</button></li>
+        <li><button onclick="mostrarSeccion('blog')" class="hover:underline">Blog</button></li>
+        <li><button onclick="mostrarSeccion('contacto')" class="hover:underline">Contacto</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Home -->
+  <div id="home" class="seccion">
+    <header class="text-center py-16 bg-green-600">
+      <h2 class="text-4xl font-bold mb-4">Bienvenido a Nuestra Página</h2>
+      <p class="text-xl">Explora lo que hacemos, lee nuestro blog y contáctanos fácilmente.</p>
+    </header>
+  </div>
+
+  <!-- Sobre nosotros -->
+  <div id="sobre" class="seccion hidden-section">
+    <section class="py-16 bg-green-500">
+      <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h3 class="text-3xl font-semibold mb-4">Sobre Nosotros</h3>
+          <p class="text-lg leading-relaxed">
+            Somos un equipo apasionado por crear soluciones digitales que impacten positivamente a nuestros clientes.
+            Nuestro enfoque combina creatividad, tecnología y compromiso con la excelencia.
+          </p>
+        </div>
+        <div>
+          <img src="https://source.unsplash.com/600x400/?team,technology" alt="Nuestro equipo" class="rounded-lg shadow-lg">
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Blog -->
+  <div id="blog" class="seccion hidden-section">
+    <section class="py-16 bg-green-600">
+      <div class="container mx-auto px-4">
+        <h3 class="text-3xl font-semibold mb-10 text-center">Últimas Publicaciones</h3>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white text-green-800 rounded-lg p-6 shadow-md">
+            <h4 class="text-xl font-bold mb-2">Cómo empezamos</h4>
+            <p class="mb-4">Conoce la historia detrás de nuestro proyecto y cómo hemos crecido.</p>
+            <a href="#" class="text-green-700 font-semibold hover:underline">Leer más</a>
+          </div>
+          <div class="bg-white text-green-800 rounded-lg p-6 shadow-md">
+            <h4 class="text-xl font-bold mb-2">Tendencias en tecnología</h4>
+            <p class="mb-4">Descubre las últimas herramientas y métodos que usamos día a día.</p>
+            <a href="#" class="text-green-700 font-semibold hover:underline">Leer más</a>
+          </div>
+          <div class="bg-white text-green-800 rounded-lg p-6 shadow-md">
+            <h4 class="text-xl font-bold mb-2">Consejos para emprendedores</h4>
+            <p class="mb-4">Ideas prácticas y aprendizajes para quienes están iniciando su negocio.</p>
+            <a href="#" class="text-green-700 font-semibold hover:underline">Leer más</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Contacto -->
+  <div id="contacto" class="seccion hidden-section">
+    <section class="py-16 bg-green-500">
+      <div class="container mx-auto px-4 max-w-xl">
+        <h3 class="text-3xl font-semibold mb-6 text-center">Contáctanos</h3>
+<form action="https://formsubmit.co/sensidata1@gmail.com" method="POST" class="bg-green-700 p-6 rounded-lg shadow-lg space-y-4">
+  <input type="hidden" name="_captcha" value="false">
+
+  <label class="block">
+    <span class="text-white">Nombre:</span>
+    <input type="text" name="nombre" class="w-full p-2 rounded text-black" required>
+  </label>
+
+  <label class="block">
+    <span class="text-white">Correo electrónico:</span>
+    <input type="email" name="email" class="w-full p-2 rounded text-black" required>
+  </label>
+
+  <label class="block">
+    <span class="text-white">Mensaje:</span>
+    <textarea name="mensaje" rows="4" class="w-full p-2 rounded text-black" required></textarea>
+  </label>
+
+  <button type="submit" class="bg-white text-green-700 px-4 py-2 rounded hover:bg-gray-200">Enviar</button>
+</form>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 bg-green-700">
+    <p>&copy; 2025 Mi Sitio. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Script de navegación -->
+  <script>
+    function mostrarSeccion(id) {
+      const secciones = document.querySelectorAll('.seccion');
+      secciones.forEach(seccion => {
+        if (seccion.id === id) {
+          seccion.classList.remove('hidden-section');
+        } else {
+          seccion.classList.add('hidden-section');
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
